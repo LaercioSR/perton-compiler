@@ -1,0 +1,362 @@
+// Generated from /Users/laerciorios/Projects/cc-unifacs/perton/src/main/antlr/Perton.g4 by ANTLR 4.13.2
+package org.perton.generated;
+import org.antlr.v4.runtime.tree.ParseTreeVisitor;
+
+/**
+ * This interface defines a complete generic visitor for a parse tree produced
+ * by {@link PertonParser}.
+ *
+ * @param <T> The return type of the visit operation. Use {@link Void} for
+ * operations with no return type.
+ */
+public interface PertonVisitor<T> extends ParseTreeVisitor<T> {
+	/**
+	 * Visit a parse tree produced by {@link PertonParser#program}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitProgram(PertonParser.ProgramContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code DeclaracaoVar}
+	 * labeled alternative in {@link PertonParser#varDeclaration}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDeclaracaoVar(PertonParser.DeclaracaoVarContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code TipoInt}
+	 * labeled alternative in {@link PertonParser#type}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTipoInt(PertonParser.TipoIntContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code TipoFloat}
+	 * labeled alternative in {@link PertonParser#type}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTipoFloat(PertonParser.TipoFloatContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code TipoString}
+	 * labeled alternative in {@link PertonParser#type}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTipoString(PertonParser.TipoStringContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code DeclaracaoFuncao}
+	 * labeled alternative in {@link PertonParser#function}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDeclaracaoFuncao(PertonParser.DeclaracaoFuncaoContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Parametros}
+	 * labeled alternative in {@link PertonParser#params}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParametros(PertonParser.ParametrosContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Parametro}
+	 * labeled alternative in {@link PertonParser#param}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParametro(PertonParser.ParametroContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code FuncaoPrincipal}
+	 * labeled alternative in {@link PertonParser#main}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFuncaoPrincipal(PertonParser.FuncaoPrincipalContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code BlocoCodigo}
+	 * labeled alternative in {@link PertonParser#block}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlocoCodigo(PertonParser.BlocoCodigoContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StmtAssignment}
+	 * labeled alternative in {@link PertonParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStmtAssignment(PertonParser.StmtAssignmentContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StmtIf}
+	 * labeled alternative in {@link PertonParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStmtIf(PertonParser.StmtIfContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StmtWhile}
+	 * labeled alternative in {@link PertonParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStmtWhile(PertonParser.StmtWhileContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StmtFor}
+	 * labeled alternative in {@link PertonParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStmtFor(PertonParser.StmtForContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StmtDoWhile}
+	 * labeled alternative in {@link PertonParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStmtDoWhile(PertonParser.StmtDoWhileContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StmtRead}
+	 * labeled alternative in {@link PertonParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStmtRead(PertonParser.StmtReadContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StmtWrite}
+	 * labeled alternative in {@link PertonParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStmtWrite(PertonParser.StmtWriteContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StmtExpression}
+	 * labeled alternative in {@link PertonParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStmtExpression(PertonParser.StmtExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StmtReturn}
+	 * labeled alternative in {@link PertonParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStmtReturn(PertonParser.StmtReturnContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StmtBlock}
+	 * labeled alternative in {@link PertonParser#statement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStmtBlock(PertonParser.StmtBlockContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Atribuicao}
+	 * labeled alternative in {@link PertonParser#assignment}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAtribuicao(PertonParser.AtribuicaoContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Retorno}
+	 * labeled alternative in {@link PertonParser#returnStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRetorno(PertonParser.RetornoContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Condicional}
+	 * labeled alternative in {@link PertonParser#ifStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondicional(PertonParser.CondicionalContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code LoopWhile}
+	 * labeled alternative in {@link PertonParser#whileStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLoopWhile(PertonParser.LoopWhileContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code LoopFor}
+	 * labeled alternative in {@link PertonParser#forStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLoopFor(PertonParser.LoopForContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ForInitDecl}
+	 * labeled alternative in {@link PertonParser#forInit}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitForInitDecl(PertonParser.ForInitDeclContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ForInitAssign}
+	 * labeled alternative in {@link PertonParser#forInit}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitForInitAssign(PertonParser.ForInitAssignContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ForInitExpr}
+	 * labeled alternative in {@link PertonParser#forInit}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitForInitExpr(PertonParser.ForInitExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ForInitEmpty}
+	 * labeled alternative in {@link PertonParser#forInit}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitForInitEmpty(PertonParser.ForInitEmptyContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ForUpdateAssign}
+	 * labeled alternative in {@link PertonParser#forUpdate}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitForUpdateAssign(PertonParser.ForUpdateAssignContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ForUpdateExpr}
+	 * labeled alternative in {@link PertonParser#forUpdate}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitForUpdateExpr(PertonParser.ForUpdateExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code LoopDoWhile}
+	 * labeled alternative in {@link PertonParser#doWhileStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLoopDoWhile(PertonParser.LoopDoWhileContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Leitura}
+	 * labeled alternative in {@link PertonParser#readStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLeitura(PertonParser.LeituraContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Escrita}
+	 * labeled alternative in {@link PertonParser#writeStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEscrita(PertonParser.EscritaContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code StringFormatada}
+	 * labeled alternative in {@link PertonParser#formatString}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStringFormatada(PertonParser.StringFormatadaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PertonParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpression(PertonParser.ExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PertonParser#logicalOrExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLogicalOrExpression(PertonParser.LogicalOrExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PertonParser#logicalAndExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLogicalAndExpression(PertonParser.LogicalAndExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PertonParser#equalityExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEqualityExpression(PertonParser.EqualityExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PertonParser#relationalExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRelationalExpression(PertonParser.RelationalExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PertonParser#additiveExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAdditiveExpression(PertonParser.AdditiveExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link PertonParser#multiplicativeExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMultiplicativeExpression(PertonParser.MultiplicativeExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Unario}
+	 * labeled alternative in {@link PertonParser#unaryExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUnario(PertonParser.UnarioContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Primario}
+	 * labeled alternative in {@link PertonParser#unaryExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrimario(PertonParser.PrimarioContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code NumeroInteiro}
+	 * labeled alternative in {@link PertonParser#primaryExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumeroInteiro(PertonParser.NumeroInteiroContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code NumeroDecimal}
+	 * labeled alternative in {@link PertonParser#primaryExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumeroDecimal(PertonParser.NumeroDecimalContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Texto}
+	 * labeled alternative in {@link PertonParser#primaryExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTexto(PertonParser.TextoContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Variavel}
+	 * labeled alternative in {@link PertonParser#primaryExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVariavel(PertonParser.VariavelContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ChamadaFuncao}
+	 * labeled alternative in {@link PertonParser#primaryExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitChamadaFuncao(PertonParser.ChamadaFuncaoContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ExpressaoParenteses}
+	 * labeled alternative in {@link PertonParser#primaryExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpressaoParenteses(PertonParser.ExpressaoParentesesContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ListaExpressoes}
+	 * labeled alternative in {@link PertonParser#exprList}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitListaExpressoes(PertonParser.ListaExpressoesContext ctx);
+}

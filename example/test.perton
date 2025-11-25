@@ -1,0 +1,44 @@
+int x = 5;
+float y = 3.14;
+string nome = "João";
+
+int soma(int a, int b) {
+    return a + b;
+}
+
+void main() {
+    int i;
+    float resultado;
+
+    // Atribuição simples
+    i = 10;
+
+    // Expressões matemáticas
+    resultado = (x + i) * y - 2.5;
+
+    // Estrutura if com bloco
+    if (x > 5 && i < 20) {
+        printf("Condição verdadeira: x=%d, i=%d", x, i);
+    }
+
+    // Loop for com declaração de variável
+    for (int j = 0; j < 10; j = j + 1) {
+        printf("Contador: %d", j);
+    }
+
+    // Loop for com variável existente
+    for (i = 0; i < 5; i = i + 1) {
+        printf("i: %d", i);
+    }
+
+    // Loop while
+    while (i > 0) {
+        i = i - 1;
+    }
+
+    // Chamada de função
+    int total = soma(x, 3);
+    printf("Soma: %d", total);
+
+    return;
+}
