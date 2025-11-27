@@ -1,6 +1,8 @@
 output
 !output/.gitkeep
 
+!build/perton.jar
+
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/

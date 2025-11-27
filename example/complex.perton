@@ -1,0 +1,92 @@
+// Função para calcular o fatorial de um número (Testa loop FOR e multiplicação)
+int calcularFatorial(int n) {
+    int resultado = 1;
+    int i;
+
+    // Testando o loop FOR
+    for (i = 1; i <= n; i = i + 1) {
+        resultado = resultado * i;
+    }
+
+    return resultado;
+}
+
+// Função para verificar se é primo (Testa loop WHILE, IF e Operador %)
+int verificarPrimo(int n) {
+    if (n <= 1) {
+        return 0; // 0 significa falso
+    }
+
+    int i = 2;
+    // Loop WHILE para procurar divisores
+    while (i < n) {
+        if (n % i == 0) {
+            return 0; // Encontrou divisor, não é primo
+        }
+        i = i + 1;
+    }
+
+    return 1; // É primo
+}
+
+// Função Principal com Menu Interativo (Testa DO-WHILE e Scanf)
+void main() {
+    int opcao = 0;
+    int entrada;
+    int resultado;
+
+    printf("\n=== SISTEMA MATEMATICO PERTON ===");
+
+    // Loop DO-WHILE para manter o menu rodando
+    do {
+        printf("\n\nEscolha uma operacao:");
+        printf("\n1 - Calcular Fatorial");
+        printf("\n2 - Verificar Numero Primo");
+        printf("\n3 - Tabuada (1 a 10)");
+        printf("\n0 - Sair");
+        printf("\nDigite sua opcao: ");
+
+        scanf("%d", &opcao);
+
+        if (opcao == 1) {
+            printf("Digite um numero para fatorial: ");
+            scanf("%d", &entrada);
+
+            // Validação simples
+            if (entrada < 0) {
+                printf("Erro: Numero deve ser positivo!");
+            } else {
+                resultado = calcularFatorial(entrada);
+                printf("O fatorial de %d e: %d", entrada, resultado);
+            }
+        }
+
+        if (opcao == 2) {
+            printf("Digite um numero para checar primo: ");
+            scanf("%d", &entrada);
+
+            resultado = verificarPrimo(entrada);
+
+            if (resultado == 1) {
+                printf("O numero %d E PRIMO!", entrada);
+            } else {
+                printf("O numero %d NAO E PRIMO.", entrada);
+            }
+        }
+
+        if (opcao == 3) {
+            printf("Digite o numero da tabuada: ");
+            scanf("%d", &entrada);
+
+            int k;
+            // Loop FOR para imprimir tabuada
+            for (k = 1; k <= 10; k = k + 1) {
+                int calc = entrada * k;
+                printf("%d x %d = %d\n", entrada, k, calc);
+            }
+        }
+
+    } while (opcao != 0);
+
+    printf("\nSaindo do sistema... Ate logo!");
+}

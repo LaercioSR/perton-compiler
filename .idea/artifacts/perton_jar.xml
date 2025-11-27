@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="perton:jar">
-    <output-path>$USER_HOME$/out/artifacts/perton_jar</output-path>
+    <output-path>$PROJECT_DIR$/build</output-path>
     <root id="archive" name="perton.jar">
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />

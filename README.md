@@ -146,11 +146,11 @@ O executável do compilador está disponível na pasta [`build/`](./build/) dest
 ### Passos para Compilar um Programa Perton
 
 1. Escreva seu código Perton em um arquivo com a extensão `.perton`, por exemplo, `programa.perton`.
-2. Abra o terminal e navegue até a pasta onde está o arquivo do compilador (`PertonCompiler.jar`).
+2. Abra o terminal e navegue até a pasta onde está o arquivo do compilador (`perton.jar`).
 3. Execute o seguinte comando para compilar seu programa Perton:
 
 	 ```bash
-	 java -jar PertonCompiler.jar caminho/para/seu/programa.perton
+	 java -jar perton.jar caminho/para/seu/programa.perton
 	 ```
 4. O compilador gerará um arquivo C com o mesmo nome do arquivo Perton na pasta `output`, mas com a extensão `.c`, por exemplo, `programa.c`.
 5. Para compilar o arquivo C gerado, utilize o GCC:
