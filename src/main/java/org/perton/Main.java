@@ -1,31 +1,85 @@
 package org.perton;
 
-import org.perton.generated.PertonLexer;
-import org.perton.generated.PertonParser;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
+import org.perton.generated.*;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Main {
-    static void main() {
-        String input = "int x = 5; void main() { printf(\"Hello: %d\", x); }";
+    @SuppressWarnings("CallToPrintStackTrace")
+    public static void main(String[] args) {
+        try {
+            String sourcePath;
 
-        // Criar o lexer
-        CharStream charStream = CharStreams.fromString(input);
-        PertonLexer lexer = new PertonLexer(charStream);
+            if (args.length > 0) {
+                sourcePath = args[0];
+            } else {
+                sourcePath = "teste.perton";
+                System.out.println("Nenhum arquivo especificado. Usando arquivo padrão: " + sourcePath);
+                System.out.println("Dica: Para usar outro arquivo, execute: java Main seu_arquivo.perton");
+            }
 
-        // Criar os tokens
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
+            File file = new File(sourcePath);
+            if (!file.exists()) {
+                System.err.println("Erro: O arquivo '" + sourcePath + "' não foi encontrado.");
+                return;
+            }
 
-        // Criar o parser
-        PertonParser parser = new PertonParser(tokens);
+            String filenameInput = file.getName().replaceFirst("[.][^.]+$", "");
 
-        // Iniciar o parsing na regra 'prog'
-        ParseTree tree = parser.program();
+            CharStream input = CharStreams.fromFileName(sourcePath);
+            PertonLexer lexer = new PertonLexer(input);
+            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            PertonParser parser = new PertonParser(tokens);
 
-        // Imprimir a árvore
-        System.out.println("Árvore de parsing:");
-        System.out.println(tree.toStringTree(parser));
+            ParseTree tree = parser.program();
+
+            if (parser.getNumberOfSyntaxErrors() > 0) {
+                System.out.println("Compilação cancelada devido a erros sintáticos.");
+                return;
+            }
+
+            ParseTreeWalker walker = new ParseTreeWalker();
+            PertonSemanticListener semanticListener = new PertonSemanticListener();
+            walker.walk(semanticListener, tree);
+
+            if (semanticListener.hasErrors()) {
+                System.out.println("\n--- ERROS SEMÂNTICOS ENCONTRADOS ---");
+                for (String err : semanticListener.getErrors()) {
+                    System.out.println(err);
+                }
+            } else {
+                System.out.println("\n[SUCESSO] O código está correto semanticamente!");
+
+                PertonToCListener cGenerator = new PertonToCListener();
+                walker.walk(cGenerator, tree);
+
+                String cCode = cGenerator.getCCode();
+
+                String outputDirName = "output";
+                File outputDir = new File(outputDirName);
+
+                if (!outputDir.exists()) {
+                    outputDir.mkdirs();
+                }
+
+                String outputPath = outputDirName + File.separator + filenameInput + ".c";
+
+                try (FileWriter writer = new FileWriter(outputPath)) {
+                    writer.write(cCode);
+                    System.out.println("\nArquivo gerado com sucesso em: " + outputPath);
+                    System.out.println("--- CÓDIGO C GERADO ---");
+                    System.out.println(cCode);
+                } catch (IOException e) {
+                    System.err.println("Erro ao salvar arquivo C: " + e.getMessage());
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,0 +1,38 @@
+// 1. Erro de Tipo na Declaração Global
+int numero = "texto";
+
+// 2. Erro de Parâmetro Duplicado
+// Mudei de 'void' para 'int' para respeitar a gramática atual
+int funcaoRuim(int a, int a) {
+    int x = 10;
+}
+
+void main() {
+    int i = 10;
+    float f = 5.5;
+    string texto = "Ola";
+
+    // 3. Erro de Variável Não Declarada
+    k = 20;
+
+    // 4. Erro de Tipo na Atribuição (int recebendo float)
+    i = 3.14;
+
+    // 5. Erro de Tipo na Atribuição (float recebendo string)
+    f = "nao pode";
+
+    // 6. Erro de Condição Inválida (String no IF)
+    if (texto) {
+        i = i + 1;
+    }
+
+    // 7. Erro de Escopo
+    if (i > 0) {
+        int segredo = 999;
+    }
+    // 'segredo' não existe fora do bloco do if
+    segredo = 0;
+
+    // 8. Erro de Redeclaração no mesmo escopo
+    int i = 50;
+}

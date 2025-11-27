@@ -7,9 +7,9 @@ program: (varDeclaration | function)* main EOF;
 varDeclaration: type ID ('=' expression)? ';' # DeclaracaoVar
               ;
 
-type: 'int'    # TipoInt
-    | 'float'  # TipoFloat
-    | 'string' # TipoString
+type: T_INT    # TipoInt
+    | T_FLOAT  # TipoFloat
+    | T_STRING # TipoString
     ;
 
 function: type ID '(' params? ')' block # DeclaracaoFuncao;
@@ -45,7 +45,6 @@ ifStatement: 'if' '(' expression ')' statement ('else' statement)? # Condicional
 
 whileStatement: 'while' '(' expression ')' statement # LoopWhile;
 
-// For Statement
 forStatement: 'for' '(' forInit expression? ';' forUpdate? ')' statement # LoopFor;
 
 forInit: varDeclaration      # ForInitDecl
