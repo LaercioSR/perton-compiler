@@ -1,8 +1,7 @@
-package org.perton;
-
+import generated.PertonLexer;
+import generated.PertonParser;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
-import org.perton.generated.*;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -17,7 +16,7 @@ public class Main {
             if (args.length > 0) {
                 sourcePath = args[0];
             } else {
-                sourcePath = "teste.perton";
+                sourcePath = "example/test.perton";
                 System.out.println("Nenhum arquivo especificado. Usando arquivo padrão: " + sourcePath);
                 System.out.println("Dica: Para usar outro arquivo, execute: java Main seu_arquivo.perton");
             }

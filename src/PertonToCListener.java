@@ -1,9 +1,7 @@
-package org.perton;
-
+import generated.PertonBaseListener;
+import generated.PertonParser;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
-import org.perton.generated.PertonBaseListener;
-import org.perton.generated.PertonParser;
 
 import java.util.HashMap;
 import java.util.Map;

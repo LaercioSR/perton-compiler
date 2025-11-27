@@ -30,9 +30,9 @@
                 <artifactId>antlr4-maven-plugin</artifactId>
                 <version>${antlr.version}</version>
                 <configuration>
-                    <sourceDirectory>${project.basedir}/src/main/antlr</sourceDirectory>
+                    <sourceDirectory>${project.basedir}/src</sourceDirectory>
 
-                    <outputDirectory>${project.basedir}/src/main/java/com/perton/generated
+                    <outputDirectory>${project.basedir}/src/generated
                     </outputDirectory>
                 </configuration>
                 <executions>
